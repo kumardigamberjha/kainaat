@@ -5,3 +5,6 @@ def index(request):
 
 def HomePage(request):
     return render(request, 'website/index.html')
+
+def AboutUs(request):
+    return render(request, 'website/aboutus.html')
