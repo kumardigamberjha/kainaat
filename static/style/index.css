@@ -1,0 +1,22 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+#homepagefirst{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+}
+.navbar-brand{
+    font-size: 1.5rem;
+}
+.nav-link{
+    font-size: 1.2rem;
+}
+/* #blogfront{
+    position: absolute;
+    top: 5%;
+} */

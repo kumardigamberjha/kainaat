@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+header{
+    max-width: 100%;
+    max-height: 100vh;
+}
+header img{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: -1;
+    filter: brightness(50%);
+}
+.neonText {
+    color: pink;
+    animation: flicker 1.5s infinite alternate;
+    
+}
+@keyframes flicker {
+    
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        text-shadow:
+        0 0 4px pink,
+        0 0 11px pink,
+        0 0 19px pink,
+        0 0 40px rgb(226, 0, 38),
+        0 0 80px rgb(226, 5, 255),
+        0 0 90px rgb(9, 255, 0),
+        0 0 100px pink,
+        0 0 150px pink;
+    
+    }
+    
+    20%, 24%, 55% {        
+        text-shadow: none;
+    }    
+}
+  .textdec{
+    font-size: 3rem;
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    font-family: 'Zen Dots', cursive;
+  }
