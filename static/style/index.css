@@ -9,16 +9,9 @@ body{
 }
 .navbar{
     background-color: #012340;
-    max-height: 100%
-}
-section{
     max-width: 100vw;
 }
-/* #homepagefirst{
-    width: 100%;
-    height: 100vh;
-    position: absolute;
-} */
+
 
 .nav-link{
     font-size: 1.1rem;
