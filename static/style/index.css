@@ -15,23 +15,11 @@ body{
     width: 100%;
     height: 100vh;
     width: 100%;
-    background: linear-gradient(to bottom, transparent, transparent, rgba(255, 3, 108, 0.904)), url('../images/kai3.png');
+    background: linear-gradient(to bottom, transparent, transparent, rgba(248, 5, 106, 0.836),rgb(255, 3, 108)), url('../images/kai3.png');
     background-size: 100% 100vh;
     background-repeat: no-repeat;
 }
-.content{
-    border: none;
-    background: rgba(0, 0, 0, 0.795);
-    border-bottom: 5px ridge pink;
-    /* border-top: 5px ridge pink; */
 
-    padding: 15px 75px;
-    border-radius: 75px;
-    position: absolute;
-    top: 70%;
-    left: 25%;
-    transform: translate(-50, -50);
-}
 .nav-link{
     font-size: 1.1rem;
     color: #000;
@@ -59,7 +47,7 @@ body{
     -225deg,
     #231557 0%,
     #44107a 29%,
-    #ff1361 67%,
+    green 67%,
     #fff800 100%
   );
   background-size: auto auto;
@@ -81,6 +69,20 @@ body{
   }
 }
 
+#kai_heading{
+    position: absolute;
+    top: 70%;
+    text-align: center;
+    border: none;
+    border-top: 5px solid black;
+
+    border-bottom: 5px solid black;
+    padding: 10px 0;
+    background-color: #44107a;
+    font-size: 3rem;
+    width: 100%;
+    margin: auto auto;
+}
 /* Button */
 .glow-on-hover {
     width: 220px;
