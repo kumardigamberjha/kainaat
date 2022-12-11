@@ -18,11 +18,15 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 
+from Kainaat import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     
     path('', include('website.urls')),
-    path('', include('Blog.urls')),
+    path('Blog/', include('Blog.urls')),
 
+    path('login/', views.Login_view, name="login"),
+    path('logout/', views.Logout_view, name="logout"),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

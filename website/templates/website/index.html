@@ -71,7 +71,9 @@
             </li>
           </ul>
           <ul>
-            <!-- soe -->
+            {% if user.is_superuser %}
+              <a class="nav-link mt-3" href="{% url 'AddBlog' %}">Add Blog</a>
+            {% endif %}
           </ul>
         </div>
       </div>
@@ -83,6 +85,8 @@
     {% endblock headerContent %}
 
   </header>
+  {% block content %}
+
 
   <div class="containers main-section mt-3">
     <div class="content">
@@ -134,7 +138,6 @@
     </div>
   </div> -->
 
-  {% block content %}
 
   <div class="b-example-divider"></div>
 
