@@ -18,8 +18,7 @@ from ckeditor.fields import RichTextField
 # Playlist or Category
 class Playlist(models.Model):
     name = models.CharField(max_length=150)
-    desc = models.TextField(blank=True)
-    img = models.ImageField()
+    desc = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -31,17 +30,11 @@ class Blog(models.Model):
     title = models.CharField(max_length=200)
     img = models.ImageField()
     pub_date = models.DateField(auto_now=True)
-    category = models.CharField(max_length=200, blank=True)
-    sub_category = models.CharField(max_length=200, blank=True)
+    # category = models.ForeignKey(Playlist, on_delete=models.CASCADE)
 
     content = RichTextField()
-    author= models.CharField(max_length=150, default="Codin India")
+    author= models.CharField(max_length=150, default="Tanya Gulati")
     readtime = models.IntegerField()
-    # tags = TaggableManager()
-    # dexc = models.TextField()
-    # play = models.ForeignKey(Playlist, on_delete=models.CASCADE)
-
-    # like = models.ManyToManyField(User)
 
     def __str__(self):  
         return self.title
