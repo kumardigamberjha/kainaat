@@ -1,7 +1,7 @@
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import UserCreationForm
 # from website.forms import CreateUserForm
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from Kainaat import settings
@@ -24,10 +24,14 @@ def Login_view(request):
             # return redirect('/')
             if user.is_superuser:
                 messages.info(request, 'Login Success')
-                return redirect('/')
+                if 'next' in request.POST:
+                    return redirect(request.POST.get('next'))
+                else:
+                    return redirect('homepage')
+                # return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
             else:
-                messages.info(request, 'Login Success')
-                return redirect('show_client')
+                messages.info(request, 'Login Attempt Failed')
+                # return redirect('show_client')
         else:
             messages.info(request, 'Invalid username/password')
 
@@ -37,11 +41,6 @@ def Login_view(request):
 ######################## Logout Views ##########################
 @login_required
 def Logout_view(request):
-    try:
-        del request.session['user']
-        ip = settings.IP
-        headers = settings.HEADERS
-    except:
-        return redirect('login')
+    logout(request)
     return redirect('login')
 

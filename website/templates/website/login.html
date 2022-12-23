@@ -24,8 +24,9 @@
     {% endif %}
         <div class="form-container">
             <h1>Login</h1>
-            <form action="" method="POST">
+            <form action="{% url 'login' %}" method="POST">
                 {% csrf_token %}
+
                 <div class="control">
                     <label for="name">Name</label>
                     <input type="text" name="username" id="name">
@@ -36,8 +37,12 @@
                 </div>
                 <!-- <span><input type="checkbox"> Remember Me </span> -->
                  <div class="control">
+                     <!-- {% if request.GET.next %}
+                     <input type="hidden" name="next" value="{{request.GET.next}}">
+                     {% endif %} -->
                     <input type="submit" value="Login">
                  </div>
+
             </form>
             <!-- <div class="link">
                 <a href="#">Forgot Password ?</a>

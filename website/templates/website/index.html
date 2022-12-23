@@ -54,8 +54,7 @@
         <div class="collapse navbar-collapse" style="margin-left: 25%;" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" style="color: white;" aria-current="page"
-                href="{% url 'homepage' %}">Home</a>
+              <a class="nav-link active" style="color: white;" aria-current="page" href="{% url 'homepage' %}">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'aboutuspage' %}">About Us</a>
@@ -71,8 +70,10 @@
             </li>
           </ul>
           <ul>
-            {% if user.is_superuser %}
-              <a class="nav-link mt-3" href="{% url 'AddBlog' %}">Add Blog</a>
+            {% if user.is_authenticated %}
+            <a class="nav-link mt-3" href="{% url 'logout' %}">Logout</a>
+            {% else %}
+            <a class="nav-link mt-3" href="{% url 'login' %}">Login</a>
             {% endif %}
           </ul>
         </div>
@@ -90,23 +91,25 @@
 
   <div class="containers main-section mt-3">
     <div class="content">
-      
+
       <h1 class="animate-charcter" id="kai_heading">Kainaat Mahajan</h1>
     </div>
   </div>
 
 
 
-  <div class="b-example-divider"></div>
+  <!-- <div class="b-example-divider"></div> -->
 
-  <div class="container col-xxl-8 px-4 py-5">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
-      <div class="col-10 col-sm-8 col-lg-6">
-        <img src="{% static 'images/kai2.png' %}" class="d-block mx-lg-auto img-fluid" style="border-radius: 15px; height: 90vh;" alt="Kainaat Mahajan" loading="lazy">
+  <div class="container col-xl-8 px-4 py-5">
+    <div class="row flex-lg-row-reverse align-items-center g-5 py-5" id="mainconid">
+      <div class="col-sm-8 col-lg-5">
+        <img src="{% static 'images/kai2.png' %}" class="d-block mx-lg-auto img-fluid" style="border-radius: 15px; height: 40%; width: 80%;" alt="Kainaat Mahajan" loading="lazy">
       </div>
-      <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">Who We Are?</h1>
-        <p class="lead">SpaceBaby Kai is a popular Instagram handle belonging to 1.5 year old Kainaat Mahajan. Her social media presence is handled by her mother, Tanya who is usually chronicling the adventures and excursions Kainaat is usually on, on her Instagram handle @spacebaby_kai.</p>
+      <div class="col-lg-7">
+        <h2 class=" fw-bold lh-1 mb-3">About Kainaat Mahajan</h2>
+        <p class="lead"><strong>SpaceBaby Kai</strong> is a popular Instagram handle belonging to 1.5 year old <strong>Kainaat Mahajan</strong>. Her
+          social media presence is handled by her mother, Tanya who is usually chronicling the adventures and excursions
+          Kainaat is usually on, on her Instagram handle <strong><i>@spacebaby_kai</i></strong>.</p>
         <div class="d-grid gap-2 d-md-flex justify-content-md-start">
           <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Blogs</button>
           <button type="button" class="btn btn-outline-success btn-lg px-4">Reels</button>
@@ -115,10 +118,7 @@
     </div>
   </div>
 
-
-
   <div class="b-example-divider"></div>
-
 
   <div class="container px-4" id="custom-cards">
     <h2 class="pb-2 border-bottom text-center">Gallery</h2>
@@ -236,6 +236,37 @@
       var splide = new Splide('.splide');
       splide.mount();
     });
+
+
+    gsap.to("#mainconid", {
+      scrollTrigger: "#mainconid", // start the animation when ".box" enters the viewport (once)
+      x: 500
+    });
+    let tl = gsap.timeline({
+      // yes, we can add it to an entire timeline!
+      scrollTrigger: {
+        trigger: "#mainconid",
+        pin: true,   // pin the trigger element while active
+        start: "top top", // when the top of the trigger hits the top of the viewport
+        end: "+=500", // end after scrolling 500px beyond the start
+        scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+        snap: {
+          snapTo: "labels", // snap to the closest label in the timeline
+          duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
+          delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
+          ease: "power1.inOut" // the ease of the snap animation ("power3" by default)
+        }
+      }
+    });
+
+    // add animations and labels to the timeline
+    tl.addLabel("start")
+      .from(".box p", { scale: 0.3, rotation: 45, autoAlpha: 0 })
+      .addLabel("color")
+      .from(".box", { backgroundColor: "#28a92b" })
+      .addLabel("spin")
+      .to(".box", { rotation: 360 })
+      .addLabel("end");
   </script>
 </body>
 
