@@ -8,7 +8,7 @@ body{
     background-color: #F2F0EB;
 }
 .navbar{
-    background-color: rgba(255, 3, 108, 1);
+    background-color: pink;
     max-width: 100vw;
 }
 .main-section{
@@ -28,7 +28,7 @@ body{
 }
 .nav-link:hover{
     font-size: 1.1rem;
-    color: white;
+    color: pinkred;
     transition: .5s ease;
 }
 .active{
@@ -45,10 +45,10 @@ body{
    font-size: 4rem;
   background-image: linear-gradient(
     -225deg,
-    #231557 0%,
-    #44107a 29%,
-    green 67%,
-    #fff800 100%
+    blue 0%,
+    gold 29%,
+    rgb(0, 255, 0) 67%,
+    black 100%
   );
   background-size: auto auto;
   background-clip: border-box;
@@ -71,17 +71,63 @@ body{
 
 #kai_heading{
     position: absolute;
-    top: 70%;
+    top: 60%;
     text-align: center;
     border: none;
     border-top: 5px solid black;
-
+    font-weight: 800;
     border-bottom: 5px solid black;
     padding: 10px 0;
-    background-color: #44107a;
-    font-size: 3rem;
+    background-color: #00ffd5;
+    font-size: 2.5rem;
     width: 100%;
-    margin: auto auto;
+    /* margin: auto auto; */
+    overflow-x: hidden;
+}
+
+@media screen and (max-width: 900px) {
+    .animate-charcter
+    {
+    text-transform: uppercase;
+    font-size: 4rem;
+    background-image: linear-gradient(
+        -225deg,
+        white 0%,
+        gold 29%,
+        rgb(0, 255, 0) 67%,
+        #00f7ff 100%
+    );
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+        /* font-size: 190px; */
+    }
+    #kai_heading{
+        position: absolute;
+        top: 55%;
+        text-align: center;
+        border: none;
+        border-top: 5px solid black;
+    
+        border-bottom: 5px solid black;
+        padding: 10px 0;
+        background-color: #00ffd5;
+        font-size: 1.5rem;
+        width: 100%;
+        /* margin: auto auto; */
+        overflow-x: hidden;
+    }   
+    .navbar{
+        position: absolute;
+        width: 100%;
+    }
 }
 /* Button */
 .glow-on-hover {
@@ -142,5 +188,22 @@ body{
     0% { background-position: 0 0; }
     50% { background-position: 400% 0; }
     100% { background-position: 0 0; }
+}
+
+span{
+    text-decoration: underline; 
+    color: orangered;
+}
+
+.btn-primary-blog{
+    background-color: rgba(255, 3, 108, 1);
+    color: #F2F0EB;
+}
+.btn-primary-login{
+    background-color: #fff;
+}
+.btn-primary-signup{
+    background-color: rgba(255, 3, 108, 1);
+    color: #F2F0EB;
 }
 

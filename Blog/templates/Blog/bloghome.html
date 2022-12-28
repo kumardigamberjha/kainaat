@@ -2,6 +2,7 @@
 
 {% block content %}
 <main class="container" style="margin-top: 95px;">
+  <a href="{% url 'AddBlog' %}">Add Blog</a>
   <div class="p-4 p-md-5 mb-4 rounded text-bg-dark" style="max-height: 350px;">
     <div class="row">
       <div class="col-md-6 px-0">
@@ -76,7 +77,7 @@
               </div>
               <div class="col-md-5">
                 {% if user.is_superuser %}
-                <a href="" class="btn btn-danger">Update</a>
+                <a href="{% url 'updateBlog' i.post_id %}" class="btn btn-danger">Update</a>
                 {% endif %}
               </div>
 

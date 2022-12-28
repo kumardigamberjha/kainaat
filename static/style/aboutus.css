@@ -1,9 +1,54 @@
-.container{
-    /* margin-top: 25px; */
+#kai_about{
+  position: absolute;
+  top: 60%;
+  text-align: center;
+  border: none;
+  font-weight: 800;
+  padding: 10px 0;
+  font-size: 4.5rem;
+  width: 100%;
+  animation: flicker 2s infinite alternate;     
+  font-family: "Poppins", sans-serif;
+  /* margin: auto auto; */
+  overflow-x: hidden;
 }
-#about-title{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+.neon {
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  text-shadow:
+    0 0 5px #fff,
+    0 0 10px #fff,
+    0 0 20px rgb(255, 238, 0),
+    0 0 40px rgb(255, 238, 0),
+    0 0 80px rgb(255, 238, 0),
+    0 0 90px rgb(255, 238, 0),
+    0 0 100px rgb(255, 238, 0),
+    0 0 150px rgb(255, 238, 0);
+    letter-spacing: 2px;
 }
-.lead{
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+h2 {
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+}
+@keyframes flicker {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+      text-shadow:
+      0 0 4px rgb(255, 238, 0),
+      0 0 11px rgb(255, 238, 0),
+      0 0 19px rgb(255, 238, 0),
+      0 0 40px rgb(255, 238, 0),
+      0 0 80px rgb(255, 238, 0),
+      0 0 90px rgb(255, 238, 0),
+      0 0 100px rgb(255, 238, 0),
+      0 0 150px rgb(255, 238, 0);
+  
+  }
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
 }
