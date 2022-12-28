@@ -68,11 +68,11 @@
                 <!-- Left links -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+                        <a class="nav-link active" aria-current="page" href="{% url 'homepage' %}">Home</a>
                     </li>
 
                     <li class="nav-item">
-                      <a class="nav-link" href="">Blogs</a>
+                      <a class="nav-link" href="{% url 'bloghome' %}">Blogs</a>
                   </li>
 
                     <li class="nav-item">
@@ -101,7 +101,7 @@
                         {% endif %}
                     </li>
                     <li>
-                        <a href="" class="btn btn-primary-signup" id="signup-btn">Sign Up</a>
+                        <a href="{% url 'signup' %}" class="btn btn-primary-signup" id="signup-btn">Sign Up</a>
                     </li>
                 </div>
             </div>

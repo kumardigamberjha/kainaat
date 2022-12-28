@@ -26,6 +26,7 @@ urlpatterns = [
     path('', include('website.urls')),
     path('Blog/', include('Blog.urls')),
 
+    path("SignUp/", views.Signup_view, name="signup"),
     path('login/', views.Login_view, name="login"),
     path('logout/', views.Logout_view, name="logout"),
 

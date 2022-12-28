@@ -26,7 +26,7 @@
     {% load widget_tweaks %}
 
     <!-- Comment Section -->
-    <h2>Comments</h2>
+    <!-- <h2>Comments</h2>
     <div class="row">
       <div class="col-md-12">
         <form action="" method="post">
@@ -44,7 +44,7 @@
           <input type="submit" name="" id="">
         </form>
       </div>
-    </div>
+    </div> -->
 
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
@@ -55,7 +55,7 @@
             her journey in this world.</p>
         </div>
 
-        <div class="p-4">
+        <!-- <div class="p-4">
           <h4 class="fst-italic">Filter By</h4>
           <ol class="list-unstyled mb-0">
             <li><a href="#">January</a></li>
@@ -71,7 +71,7 @@
             <li><a href="#">November</a></li>
             <li><a href="#">December</a></li>
           </ol>
-        </div>
+        </div> -->
 
         <div class="p-4">
           <h4 class="fst-italic">Our handles</h4>
@@ -88,32 +88,4 @@
 </main>
 
 
-<script>
-    $.ajax({
-      type: 'GET',
-      url: "{% url 'read_blog' %}",
-      data: { 'phone': x },
-      success: function (data) {
-        var instance = JSON.parse(data["named"]);
-        var fieldss = instance[0]["fields"];
-        $('#c_name').val(fieldss['name'])
-        $('#inputAddress').val(fieldss['email'])
-        $('#inputAddress2').val(fieldss['address'])
-        $('#contactnumber2').val(fieldss['phone2'])
-        $('#inputCity').val(fieldss['city'])
-        $('#inputZip').val(fieldss['post_code'])
-        $('#c_id').val(fieldss['id'])
-        console.log(fieldss["id"])
-
-        // console.log("fields", fieldss['name'],);
-
-        console.log("Done");
-      },
-      error: function (response) {
-        // alert the error if any error occured
-        alert(response["responseJSON"]["error"]);
-      }
-    })
-  })
-</script>
 {% endblock content %}
