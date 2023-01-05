@@ -6,8 +6,12 @@ from django.contrib.auth.decorators import login_required
 def BlogHome(request):
     blog = Blog.objects.all()
     randomeBlog = blog.order_by('?')[0]
+    randomeBlog2 = blog.order_by('?')[0]
+    if randomeBlog == randomeBlog2:
+        randomeBlog2 = blog.order_by('?')[0]
+
     print(blog)
-    context = {'Blog': blog, 'randomBlog': randomeBlog}
+    context = {'Blog': blog, 'randomBlog': randomeBlog,  'randomBlog2': randomeBlog2}
     return render(request, 'Blog/bloghome.html', context)
 
 
