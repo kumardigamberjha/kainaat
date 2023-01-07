@@ -3,7 +3,7 @@
 {% block content %}
 <main class="container" style="margin-top: 105px;">
 
-  <div class="row g-5">
+  <div class="row">
     <div class="col-md-8">
       <h3 class="pb-4 mb-4 fst-italic border-bottom">
         From the - <span style="color: #F26363;"><i>{{data.author}}</i></span>
@@ -17,10 +17,10 @@
         <hr>
         {{data.content|safe}}
 
-        <nav class="blog-pagination" aria-label="Pagination">
+        <!-- <nav class="blog-pagination" aria-label="Pagination">
           <a class="btn btn-outline-primary rounded-pill" href="#">Older</a>
           <a class="btn btn-outline-secondary rounded-pill disabled">Newer</a>
-        </nav>
+        </nav> -->
 
     </div>
     {% load widget_tweaks %}
@@ -60,8 +60,8 @@
           <h4 class="fst-italic">Our handles</h4>
           <ol class="list-unstyled">
             <li><a href="https://www.instagram.com/spacebaby_kai/" target="_blank">Instagram</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Facebook</a></li>
+            <!-- <li><a href="#">Twitter</a></li> -->
+            <!-- <li><a href="#">Facebook</a></li> -->
           </ol>
         <!-- </div> -->
       </div>
