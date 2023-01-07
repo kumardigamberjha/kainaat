@@ -23,7 +23,7 @@
           <h3 class="mb-0">{{randomBlog.title|slice:"0:20"}}</h3>
           <div class="mb-1 text-muted">{{randomBlog.pub_date}}</div>
           <p class="card-text mb-auto">{{randomBlog.content|safe|slice:"0:30"}}</p>
-          <a href="{% url 'readBlog' randomBlog.post_id %}" class="stretched-link">Continue reading</a>
+          <a href="{% url 'ReadBlog' randomBlog.post_id %}" class="stretched-link">Continue reading</a>
         </div>
         <div class="col-auto col-md-6 d-none d-lg-block">
           <img src="{{randomBlog.img.url}}" alt="{{randomBlog.title}}" style="width: 200px; height: 200px;">
@@ -38,7 +38,7 @@
           <div class="mb-1 text-muted">{{randomBlog2.pub_date}}</div>
           <p class="mb-auto">{{randomBlog2.content|safe|slice:"0:30"}}
           </p>
-          <a href="{% url 'readBlog' randomBlog2.post_id %}" class="stretched-link">Continue reading</a>
+          <a href="{% url 'ReadBlog' randomBlog2.post_id %}" class="stretched-link">Continue reading</a>
         </div>
         <div class="col-auto col-md-6 d-none d-lg-block">
           <img src="{{randomBlog2.img.url}}" alt="{{randomBlog.title}}" style="width: 200px; height: 200px;">
