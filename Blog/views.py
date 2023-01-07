@@ -10,7 +10,6 @@ def BlogHome(request):
     if randomeBlog == randomeBlog2:
         randomeBlog2 = blog.order_by('?')[0]
 
-    print(blog)
     context = {'Blog': blog, 'randomBlog': randomeBlog,  'randomBlog2': randomeBlog2}
     return render(request, 'Blog/bloghome.html', context)
 
