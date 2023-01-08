@@ -1,13 +1,16 @@
 from django.shortcuts import render
 from website.forms import ContactUsForm
 from django.contrib import messages
-
+from Blog.models import Blog
 
 def index(request):
+    
     return render(request, 'website/welcomepage.html')
 
 def HomePage(request):
-    return render(request, 'website/index.html')
+    blogs = Blog.objects.all()[:6]
+    context = {'blogs': blogs}
+    return render(request, 'website/index.html', context)
 
 def AboutUs(request):
     return render(request, 'website/aboutus.html')
