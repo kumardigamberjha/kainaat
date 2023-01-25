@@ -9,7 +9,15 @@ def index(request):
 
 def HomePage(request):
     blogs = Blog.objects.all()[:6]
-    context = {'blogs': blogs}
+    form = ContactUsForm()
+
+    if request.method == "POST":
+        form = ContactUsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            print("Form Saved")
+            messages.success(request, 'Feedback Form Submitted')
+    context = {'blogs': blogs, 'form': form}
     return render(request, 'website/index.html', context)
 
 def AboutUs(request):

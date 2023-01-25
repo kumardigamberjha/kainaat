@@ -1,278 +1,498 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en">
 
 <head>
-  <!-- Required meta tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  {% block meta %}
-  <meta name="keywords" content="Kainaat Mahajan, Blogs, Newsletters">
-  <meta name="description" content="kainaat Mahajan">
-  <meta name="author" content="Coding India , Digamber Jha">
-  {% endblock meta %}
-
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+  <meta name="keywords"
+    content="​Create Your Personal Style, ​Beauty and Personal Care, ​Fashion and beauty tips, ​Top Fashion and Beauty Tips, ​How to Look Younger">
+  <meta name="description" content="">
+  <title>Kainaat Mahajan | Home</title>
   {% load static %}
-
-  {% block title %}
-  <title>Kainaat Mahajan | Homepage</title>
-  {% endblock title %}
-
-  <!-- Google Adsense -->
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2063912521900403"
-    crossorigin="anonymous"></script>
-
-  <!-- MD Bootstrap -->
-  <!-- Font Awesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
-  <!-- MDB -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css" rel="stylesheet" />
-  <!-- End MD -->
+  <link rel="stylesheet" href="{% static 'style/nicepage.css' %}" media="screen">
+  <link rel="stylesheet" href="{% static 'style/Home.css' %}" media="screen">
+  <script class="u-script" type="text/javascript" src="{% static 'javascript/jquery.js' %}" defer=""></script>
+  <script class="u-script" type="text/javascript" src="{% static 'javascript/nicepage.js' %}" defer=""></script>
+  <meta name="generator" content="Nicepage 5.3.6, nicepage.com">
+  <meta name="referrer" content="origin">
+  <link id="u-theme-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+  <link id="u-page-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
 
 
-  {% block css %}
-  <link rel="stylesheet" href="{%static 'style/index.css' %}">
-
-  {% endblock css %}
-
+  <meta name="theme-color" content="#478ac9">
+  <meta property="og:title" content="Home">
+  <meta property="og:type" content="website">
 </head>
 
-<body>
-  {% block nav %}
-
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top  text-dark">
-    <!-- Container wrapper -->
-    <div class="container-fluid">
-      <!-- Navbar brand -->
-      <a class="navbar-brand me-2" href="/">
-        <img class="nav-img" src="{% static 'images/T&K_final-07.png' %}" style="height: 60px; width: 70px;"
-          alt="Kainaat Mahajan" loading="lazy" style="margin-top: -1px;" />
+<body class="u-body u-xl-mode" data-lang="en">
+  <header class="u-clearfix u-header u-header" id="sec-7bf6">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <a href="{% url 'homepage' %}" class="u-image u-logo u-image-1">
+        <img src="{% static 'images/T&K_final-07.png' %}" class="u-logo-image u-logo-image-1">
       </a>
-
-      <!-- Toggle button -->
-      <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarButtonsExample"
-        aria-controls="navbarButtonsExample" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fas fa-bars"></i>
-      </button>
-
-      <!-- Collapsible wrapper -->
-      <div class="collapse navbar-collapse " id="navbarButtonsExample">
-        <!-- Left links -->
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'homepage' %}">Home</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'bloghome' %}">Blogs</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'aboutuspage' %}">About us</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'contactuspage' %}">Contact us</a>
-          </li>
-          <!-- <li class="nav-item"><a href="" class="nav-link">Gallery</a></li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="">Reels</a>
-                    </li>
-                     -->
-
-        </ul>
-        <!-- Left links -->
-
-        <div style="list-style: none;" class="d-flex align-items-center">
-          <li>
-            {% if user.is_authenticated %}
-            <a class="btn btn-primary-login me-3" href="{% url 'logout' %}">Logout</a>
-            {% else %}
-            <a class="btn btn-primary-login me-3" href="{% url 'login' %}">Login</a>
-            {% endif %}
-          </li>
-          <li>
-            <a href="{% url 'signup' %}" class="btn btn-primary-signup" id="signup-btn">Sign Up</a>
-          </li>
+      <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+        <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+          <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+            href="#">
+            <svg class="u-svg-link" viewBox="0 0 24 24">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+            </svg>
+            <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"
+              xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <rect y="1" width="16" height="2"></rect>
+                <rect y="7" width="16" height="2"></rect>
+                <rect y="13" width="16" height="2"></rect>
+              </g>
+            </svg>
+          </a>
         </div>
-      </div>
+        <div class="u-nav-container">
+          <ul class="u-nav u-unstyled u-nav-1">
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="{% url 'homepage' %}" style="padding: 10px 20px;">Home</a>
+            </li>
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="{% url 'aboutuspage' %}" style="padding: 10px 20px;">About</a>
+            </li>
+            <li class="u-nav-item"><a
+              class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+              href="{% url 'bloghome' %}" style="padding: 10px 20px;">Blogs</a>
+          </li>
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="{% url 'contactuspage' %}" style="padding: 10px 20px;">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="u-nav-container-collapse">
+          <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+            <div class="u-inner-container-layout u-sidenav-overflow">
+              <div class="u-menu-close"></div>
+              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'homepage' %}">Home</a>
+                </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'aboutuspage' %}">About</a>
+                </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'bloghome' %}">Blogs</a>
+                </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'contactuspage' %}">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+      </nav>
     </div>
-    <!-- Collapsible wrapper -->
-
-    <!-- Container wrapper -->
-  </nav>
-
-
-  {% endblock nav %}
-
-  <!-- BLOCK CONTENT -->
-
+  </header>
   {% block content %}
-  <!-- <img src="{% static 'images/kai11.png' %}" alt="Kainaat mahajan image" style="height: 60vh; width: 100%; object-fit: cover; filter: brightness(80%);"> -->
-  <!-- <video src=""></video> -->
-  <video width="320" height="240" muted autoplay loop style="width: 100vw; height: 85vh; background-color: #F2683D;">
-    <source src="{% static 'images/vid.mp4' %}" type="video/mp4">
-    <!-- <source src="movie.ogg" type="video/ogg"> -->
-    <!-- Your browser does not support the video tag. -->
-  </video>
+  <section class="u-align-center u-clearfix u-white u-section-1" id="carousel_2d3d">
+    <div
+      class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-valign-middle-xs u-sheet-1">
+      <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+        <div class="u-gutter-0 u-layout">
+          <div class="u-layout-row">
+            <div class="u-align-left u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
+              <div class="u-container-layout u-valign-middle u-container-layout-1">
+                <h1 class="u-text u-text-palette-2-base u-text-1"> Kainaat Mahajan</h1>
+                <p class="u-text u-text-2"> SpaceBaby Kai is a popular Instagram handle belonging to 1.5 year old
+                  Kainaat Mahajan. Her social media presence is handled by her mother, Tanya who is usually chronicling
+                  the adventures and excursions Kainaat is usually on, on her Instagram handle @spacebaby_kai.</p>
 
-  <div class="conatiner">
-    <!-- <div><h1 class="animate-charcter" id="kai_heading">Welcome To Kainaatmahajan.com</h1></div> -->
-
-    <section>
-      <h2 class="text-center mt-5 text-primary"
-        style="font-size: 3.2rem ;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchetz MS', sans-serif; font-weight: 600;">
-        Our <span>Popular</span> Blogs</h2>
-
-      <div class="container">
-        <div class="row" style="width: 98%;">
-          {% for i in blogs %}
-          <div class="col-md-6">
-            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-              <div class="col col-md-6 p-4 d-flex flex-column position-static">
-                <h3 class="mb-0">{{i.title|slice:"0:20"}}</h3>
-                <div class="mb-1 text-muted">{{i.pub_date}}</div>
-                <p class="mb-auto">{{i.content|safe|slice:"0:30"}}
-                </p>
-                <a href="{% url 'ReadBlog' i.post_id %}" class="stretched-link">Continue reading</a>
-              </div>
-              <div class="col-auto col-md-6 d-none d-lg-block">
-                <img src="{{i.img.url}}" alt="{{i.title}}" style="width: 200px; height: 200px;">
-      
+                <a href="{% url 'aboutuspage' %}"
+                  class="u-active-palette-2-light-1 u-border-2 u-border-active-palette-2-light-1 u-border-hover-palette-2-light-1 u-border-palette-2-light-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-none u-radius-50 u-text-active-white u-text-body-color u-text-hover-white u-btn-2">learn
+                  more</a>
               </div>
             </div>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
-
-    <!-- <section>
-      <h2 class="text-center mt-5 mb-5 text-primary"
-        style="font-size: 3.2rem ;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchetz MS', sans-serif; font-weight: 600;">
-        <span>Your</span> Area of Interest</h2>
-      <div class="container">
-        <div class="row" style="width: 98%;">
-          <div class="col-md-4 mt-2">
-            <div class="card" style="width: 18rem;">
-              <img src="{% static 'images/blog/5396346.jpg' %}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a href="#" class="btn btn-primary-blog">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mt-2">
-            <div class="card" style="width: 18rem;">
-              <img src="{% static 'images/blog/5396346.jpg' %}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a href="#" class="btn btn-primary-blog">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mt-2">
-            <div class="card" style="width: 18rem;">
-              <img src="{% static 'images/blog/5396346.jpg' %}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a href="#" class="btn btn-primary-blog">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mt-2">
-            <div class="card" style="width: 18rem;">
-              <img src="{% static 'images/blog/5396346.jpg' %}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a href="#" class="btn btn-primary-blog">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mt-2">
-            <div class="card" style="width: 18rem;">
-              <img src="{% static 'images/blog/5396346.jpg' %}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a href="#" class="btn btn-primary-blog">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mt-2">
-            <div class="card" style="width: 18rem;">
-              <img src="{% static 'images/blog/5396346.jpg' %}" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                  card's content.</p>
-                <a href="#" class="btn btn-primary-blog">Go somewhere</a>
+            <div class="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
+              <div class="u-container-layout u-valign-middle u-container-layout-2">
+                <div
+                  class="u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-opacity u-opacity-50 u-shape u-shape-svg u-text-palette-2-light-2 u-shape-1">
+                  <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 150" style="">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-8e3a"></use>
+                  </svg>
+                  <svg class="u-svg-content" viewBox="0 0 160 150" x="0px" y="0px" id="svg-8e3a">
+                    <path d="M43.2,126.9c14.2,1.3,27.6,7,39.1,15.6c8.3,6.1,19.4,10.3,32.7,5.3c11.7-4.4,18.6-17.4,21-30.2c2.6-13.3,8.1-25.9,15.7-37.1
+	c8.3-12.1,10.8-27.9,5.3-42.7C150.5,20.3,134.6,9,117,7.6C107.9,6.9,98.8,5,90.1,1.9C83-0.6,75-0.7,67.4,2.1
+	c-9.9,3.7-17,11.6-20.1,21c-3.3,10.1-10.9,18-20.6,22.2c-0.1,0-0.1,0.1-0.2,0.1c-20.3,8.9-31,32-24.6,53.2
+	C6.9,115.6,25.2,125.2,43.2,126.9z"></path>
+                  </svg>
+                </div>
+                <img
+                  class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-expanded-width-xs u-image u-image-contain u-image-default u-image-1"
+                  data-image-width="1000" data-image-height="753" src="{% static 'images/kai3bg.png' %}">
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
- -->
-
-    {% endblock content %}
-
-
-    {% block footer %}
-    <div class="container">
-      <footer class="d-flex flex-wrap footer justify-content-between align-items-center py-3 my-3 border-top">
-        <p class="col-md-3 mb-0 text-muted">&copy; Kainaat Mahajan, Inc</p>
-
-        <a href="/"
-          class="col-md-3 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-          <svg class="bi me-2" width="40" height="32">
-            <use xlink:href="#bootstrap" />
-          </svg>
-        </a>
-
-
-        <ul class="nav col-md-6 justify-content-end">
-          <li class="nav-item"><a href="{% url 'index' %}" class="nav-link px-2 text-muted">Home</a></li>
-          <li class="nav-item"><a href="" class="nav-link px-2 text-muted">Blogs</a></li>
-          <li class="nav-item"><a href="{% url 'aboutuspage' %}" class="nav-link px-2 text-muted">About us</a></li>
-
-          <li class="nav-item"><a href="" class="nav-link px-2 text-muted">Contact us</a></li>
-        </ul>
-      </footer>
     </div>
-    {% endblock footer %}
+  </section>
+  <section class="u-align-center u-clearfix u-section-2" id="carousel_fb1e">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div class="u-align-center u-container-style u-layout-cell u-shape-rectangle u-size-30 u-layout-cell-1">
+              <div class="u-container-layout u-valign-middle u-container-layout-1">
+                <h5 class="u-custom-font u-font-montserrat u-text u-text-default u-text-1">What we Do</h5>
+                <h2 class="u-custom-font u-font-montserrat u-text u-text-palette-2-base u-text-2"> Blogs And Content
+                  writing</h2>
+                <div
+                  class="u-expanded-width-lg u-opacity u-opacity-45 u-shape u-shape-svg u-text-palette-2-light-2 u-shape-1">
+                  <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style="">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9c5e"></use>
+                  </svg>
+                  <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-9c5e"
+                    style="enable-background:new 0 0 160 160;">
+                    <path d="M151.7,132.5c-3.4,6-7.9,11.7-13.3,16.5c-29.2,26.1-54.1-2.3-88.2-3S0,109.5,0,91.6s14.8-31.3,25.3-45.3S33.4,11,51.8,3
+	c15.3-6.6,33.6-0.4,51.6,0.7c11.2,0.7,28.8-3.8,38.2,0.4s11.8,15.4,9.2,22.8c-1.9,5.4-5.5,11.6-12.8,16.5
+	c-9.3,10.1-4.7,22.9,3.7,33.4c7.8,9.7,17.7,11.7,18.3,23.5C160.4,110.8,157.6,122.2,151.7,132.5L151.7,132.5z"></path>
+                  </svg>
+                </div>
+                <img class="u-image u-image-contain u-image-default u-image-1" src="{% static 'images/abcbg.png' %}"
+                  alt="" data-image-width="900" data-image-height="821">
+
+              </div>
+            </div>
+            <div class="u-container-style u-layout-cell u-shape-rectangle u-size-30 u-layout-cell-2">
+              <div class="u-container-layout u-valign-middle u-container-layout-2">
+                <div class="u-expanded-width u-list u-list-1">
+                  <div class="u-repeater u-repeater-1">
+                    <div
+                      class="u-align-left u-border-2 u-border-white u-container-style u-list-item u-repeater-item u-list-item-1">
+                      <div class="u-container-layout u-similar-container u-container-layout-3"><span
+                          class="u-file-icon u-icon u-icon-circle u-palette-2-light-1 u-text-white u-icon-1"><img
+                            src="{% static 'images/bgrmv1.png' %}" alt=""></span>
+                        <h6 class="u-custom-font u-font-montserrat u-text u-text-default-lg u-text-default-xl u-text-4">
+                          Our Blogs</h6>
+                        <p class="u-text u-text-grey-40 u-text-5">Sample text. Click to select the text box. Click again
+                          or double click to start editing the text.</p>
+                      </div>
+                    </div>
+                    <div
+                      class="u-align-left u-border-2 u-border-white u-container-style u-list-item u-repeater-item u-list-item-2">
+                      <div class="u-container-layout u-similar-container u-container-layout-4"><span
+                          class="u-file-icon u-icon u-icon-circle u-palette-2-light-1 u-text-white u-icon-2"><img
+                            src="{% static 'images/123.png' %}" alt=""></span>
+                        <h6 class="u-custom-font u-font-montserrat u-text u-text-default-lg u-text-default-xl u-text-6">
+                          Reels</h6>
+                        <p class="u-text u-text-grey-40 u-text-7">Sample text. Click to select the text box. Click again
+                          or double click to start editing the text.</p>
+                      </div>
+                    </div>
+                    <div
+                      class="u-align-left u-border-2 u-border-white u-container-style u-list-item u-repeater-item u-list-item-3">
+                      <div class="u-container-layout u-similar-container u-container-layout-5"><span
+                          class="u-file-icon u-icon u-icon-circle u-palette-2-light-1 u-text-white u-icon-3"><img
+                            src="{% static 'images/shopbg.png' %}" alt=""></span>
+                        <h6 class="u-custom-font u-font-montserrat u-text u-text-default-lg u-text-default-xl u-text-8">
+                          Shop With Us</h6>
+                        <p class="u-text u-text-grey-40 u-text-9">Sample text. Click to select the text box. Click again
+                          or double click to start editing the text.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-section-3" id="carousel_1ef1">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <div class="u-opacity u-opacity-50 u-shape u-shape-svg u-text-palette-2-light-2 u-shape-1">
+        <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 150" style="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9092"></use>
+        </svg>
+        <svg class="u-svg-content" viewBox="0 0 160 150" x="0px" y="0px" id="svg-9092">
+          <path d="M121.1,18C110.7,1.5,89.8-4.6,72.6,3.7c-10.5,5-17.7,14.2-20.8,24.7C48.4,39.9,42.4,48,28.3,55.5
+	c-50.6,26.9-27.3,99.4,22,84.7c14.3-4.2,29.7-1.4,43.2,5.1c13.3,6.5,29.3,6.4,43.2-1.8c21-12.5,29.3-40.1,18.8-62.7
+	c-2.5-5.4-5.9-10.1-9.8-14c-9.4-9.3-16.4-21-18.8-34.2C125.9,27.6,124,22.6,121.1,18z"></path>
+        </svg>
+      </div>
+      <img class="u-expanded-width-md u-expanded-width-xs u-image u-image-contain u-image-default u-image-1"
+        src="{% static 'images/123.png' %}" alt="" data-image-width="1000" data-image-height="896">
+      <div
+        class="u-align-left-md u-align-left-sm u-align-left-xs u-align-right-lg u-align-right-xl u-container-style u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
+        <div class="u-container-layout u-valign-top u-container-layout-1">
+          <h2 class="u-custom-font u-font-montserrat u-text u-text-1"> About TanynKai </h2>
+          <h5 class="u-text u-text-2">We have decided to dedicate this space to Kai and keep it as a record for her to
+            see one day. It would most likely be the greatest wealth, the greatest asset to leave your baby girl-a
+            written account of her journey in this world.</h5>
+
+        </div>
+      </div>
+      <div class="u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-list u-list-1">
+        <div class="u-repeater u-repeater-1">
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-2">
+              <p class="u-text u-text-default u-text-grey-60 u-text-4"> Many people ask-Why “SpaceBaby”? Well, Kainaat
+                means The Universe so what other than the Space to relate to the most? Kainaat is a peppy little animal
+                lover who loves to spread cheer and smiles wherever she goes. &nbsp;</p>
+            </div>
+          </div>
+          <div class="u-container-style u-list-item u-repeater-item">
+            <div class="u-container-layout u-similar-container u-container-layout-3">
+              <p class="u-text u-text-default u-text-grey-60 u-text-5"> While you’re here, to make it worth your while,
+                there is a blog written and maintained by Tanya who is an avid reader and passionate for writing. You’ll
+                find the letters she is writing for her baby girl to grow up and read. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-white u-section-4" id="carousel_270e">
+    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-xl u-valign-middle-xs u-sheet-1">
+      <div class="u-opacity u-opacity-70 u-palette-2-light-2 u-shape u-shape-circle u-shape-1"></div>
+      <div class="u-opacity u-opacity-50 u-shape u-shape-svg u-text-palette-2-light-2 u-shape-2">
+        <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style="">
+          <use xmlns:xlink="" xlink:href="#svg-7442"></use>
+        </svg>
+        <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-7442"
+          style="enable-background:new 0 0 160 160;">
+          <path d="M151.7,132.5c-3.4,6-7.9,11.7-13.3,16.5c-29.2,26.1-54.1-2.3-88.2-3S0,109.5,0,91.6s14.8-31.3,25.3-45.3S33.4,11,51.8,3
+	c15.3-6.6,33.6-0.4,51.6,0.7c11.2,0.7,28.8-3.8,38.2,0.4s11.8,15.4,9.2,22.8c-1.9,5.4-5.5,11.6-12.8,16.5
+	c-9.3,10.1-4.7,22.9,3.7,33.4c7.8,9.7,17.7,11.7,18.3,23.5C160.4,110.8,157.6,122.2,151.7,132.5L151.7,132.5z"></path>
+        </svg>
+      </div>
+      <img class="u-align-left u-expanded-width-sm u-image u-image-contain u-image-default u-image-1" alt=""
+        data-image-width="1000" data-image-height="908" src="{% static 'images/kai2bg.png' %}">
+      <div
+        class="u-align-center-md u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-xl u-container-style u-expanded-width u-group u-shape-rectangle u-group-1">
+        <div class="u-container-layout u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-1">
+          <h2 class="u-text u-text-default u-text-1"> Our Users and Motivation<br>
+          </h2>
+          <p class="u-text u-text-2">While you’re here, to make it worth your while, there is a blog written and maintained by Tanya who is an avid reader and passionate for writing. You’ll find the letters she is writing for her baby girl to grow up and read. And also, giving out her first hand motherhood experiences here. </p>
+          <a href="{% url 'bloghome' %}"
+            class="u-active-palette-2-light-1 u-border-2 u-border-active-palette-2-light-1 u-border-hover-palette-2-light-1 u-border-palette-2-light-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-none u-radius-50 u-text-active-white u-text-body-color u-text-hover-white u-btn-2">learn
+            more</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- <section class="u-clearfix u-section-5" id="carousel_c7b5">
+    <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
+      <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+        <div class="u-gutter-0 u-layout">
+          <div class="u-layout-col">
+            <div class="u-size-30">
+              <div class="u-layout-row">
+                <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
+                  <div class="u-container-layout u-valign-middle u-container-layout-1">
+                    <h5 class="u-custom-font u-font-montserrat u-text u-text-1">Quick can manor smart money hopes worth
+                      too. Comfort produce husband boy her had hearing. Law others theirs passed but wishes. You day
+                      real less till dear read.</h5>
+                    <p class="u-text u-text-body-color u-text-default u-text-2">Image from <a
+                        href="https://www.freepik.com/photos/beautiful-model"
+                        class="u-border-1 u-border-active-grey-50 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-border-palette-2-light-2 u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-link u-button-style u-none u-radius-0 u-text-body-color u-top-left-radius-0 u-top-right-radius-0 u-btn-1">Freepik</a>
+                    </p>
+                  </div>
+                </div>
+                <div class="u-align-center u-container-style u-layout-cell u-size-30 u-layout-cell-2">
+                  <div
+                    class="u-container-layout u-valign-middle-lg u-valign-middle-xl u-valign-middle-xs u-container-layout-2">
+                    <div
+                      class="u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-opacity u-opacity-50 u-shape u-shape-svg u-text-palette-2-light-2 u-shape-1">
+                      <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 140" style="">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-fc3a"></use>
+                      </svg>
+                      <svg class="u-svg-content" viewBox="0 0 160 140" x="0px" y="0px" id="svg-fc3a">
+                        <g>
+                          <g>
+                            <path d="M138.9,102.2c-9.5,10.1-24.4,20.2-41.2,27.4C63.2,144.5,21,147.1,3.1,112.4c-9.9-19.1,6.5-28.8,11.8-45.7
+			c5.3-16.9-11.4-32.3-5.1-49.9c1.8-4.9,4.9-9,8.9-11.9C24,1,30.8-0.8,37.8,0.3C43.6,1.2,49,3.5,54.3,5.7c8.8,3.7,17.4,7.1,26.3,9.8
+			c15.7,4.7,31.3,3.7,47.1,7.2c8.5,1.9,16.7,5.6,22.6,11.8C170.3,55.7,155.8,84.1,138.9,102.2z"></path>
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <img class="u-expanded-width-xs u-image u-image-contain u-image-1" src="images/gggg-min.png"
+                      data-image-width="1147" data-image-height="1080">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="u-size-30">
+              <div class="u-layout-row">
+                <div class="u-align-center u-container-style u-layout-cell u-size-30 u-layout-cell-3">
+                  <div class="u-container-layout u-valign-middle u-container-layout-3">
+                    <div
+                      class="u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-opacity u-opacity-50 u-shape u-shape-svg u-text-palette-2-light-2 u-shape-2">
+                      <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 140" style="">
+                        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-6b70"></use>
+                      </svg>
+                      <svg class="u-svg-content" viewBox="0 0 160 140" x="0px" y="0px" id="svg-6b70">
+                        <g>
+                          <g>
+                            <path d="M138.9,102.2c-9.5,10.1-24.4,20.2-41.2,27.4C63.2,144.5,21,147.1,3.1,112.4c-9.9-19.1,6.5-28.8,11.8-45.7
+			c5.3-16.9-11.4-32.3-5.1-49.9c1.8-4.9,4.9-9,8.9-11.9C24,1,30.8-0.8,37.8,0.3C43.6,1.2,49,3.5,54.3,5.7c8.8,3.7,17.4,7.1,26.3,9.8
+			c15.7,4.7,31.3,3.7,47.1,7.2c8.5,1.9,16.7,5.6,22.6,11.8C170.3,55.7,155.8,84.1,138.9,102.2z"></path>
+                          </g>
+                        </g>
+                      </svg>
+                    </div>
+                    <img class="u-image u-image-contain u-image-2" src="images/-min.png" data-image-width="900"
+                      data-image-height="839">
+                  </div>
+                </div>
+                <div class="u-container-style u-layout-cell u-shape-rectangle u-size-30 u-layout-cell-4">
+                  <div
+                    class="u-container-layout u-valign-bottom-sm u-valign-bottom-xs u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-container-layout-4">
+                    <p class="u-text u-text-grey-40 u-text-3"> Article evident arrived express highest men did boy.
+                      Mistress sensible entirely am so. Quick can manor smart money hopes worth too. Comfort produce
+                      husband boy her had hearing.<br>
+                      <br>
+                      <span style="font-weight: 700;" class="u-text-black">Oh feel if up to till like.&nbsp;He an thing
+                        rapid these after going drawn or. Timed she his law the spoil round defer. In surprise concerns
+                        informed betrayed he learning is ye.</span>
+                    </p>
+                    <div class="u-opacity u-opacity-70 u-palette-2-light-2 u-shape u-shape-circle u-shape-3"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="u-clearfix u-section-6" id="carousel_b467">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
+        <div class="u-layout">
+          <div class="u-layout-row">
+            <div class="u-align-left u-container-style u-layout-cell u-size-30 u-layout-cell-1">
+              <div class="u-container-layout u-valign-middle u-container-layout-1">
+                <h2 class="u-custom-font u-font-montserrat u-text u-text-1"> How to Look Younger</h2>
+                <p class="u-text u-text-2"> Article evident arrived express highest men did boy. Mistress sensible
+                  entirely am so. Quick can manor smart money hopes worth too. Comfort produce husband boy her had
+                  hearing.<br>
+                  <br>Oh feel if up to till like.&nbsp;He an thing rapid these after going drawn or. Timed she his law
+                  the spoil round defer. In surprise concerns informed betrayed he learning is ye.
+                </p>
+                <p class="u-text u-text-body-color u-text-default u-text-3">Image from <a
+                    href="https://www.freepik.com/photos/beautiful-model"
+                    class="u-border-1 u-border-active-grey-50 u-border-hover-grey-50 u-border-no-left u-border-no-right u-border-no-top u-border-palette-2-light-2 u-bottom-left-radius-0 u-bottom-right-radius-0 u-btn u-button-link u-button-style u-none u-radius-0 u-text-body-color u-top-left-radius-0 u-top-right-radius-0 u-btn-1">Freepik</a>
+                </p>
+                <a href="https://nicepage.one"
+                  class="u-active-palette-2-light-1 u-border-2 u-border-active-palette-2-light-1 u-border-hover-palette-2-light-1 u-border-palette-2-light-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-none u-radius-50 u-text-active-white u-text-body-color u-text-hover-white u-btn-2">learn
+                  more</a>
+              </div>
+            </div>
+            <div
+              class="u-align-center-md u-align-center-sm u-align-center-xs u-align-right-lg u-align-right-xl u-container-style u-layout-cell u-size-30 u-layout-cell-2">
+              <div class="u-container-layout u-valign-middle u-container-layout-2">
+                <div class="u-opacity u-opacity-50 u-shape u-shape-svg u-text-palette-2-light-2 u-shape-1">
+                  <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 160" style="">
+                    <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9e00"></use>
+                  </svg>
+                  <svg class="u-svg-content" viewBox="0 0 160 160" x="0px" y="0px" id="svg-9e00"
+                    style="enable-background:new 0 0 160 160;">
+                    <path d="M10.3,39.9c-18.2,24.9-9.2,62.5,4,87.4c8.2,15.4,23,36.1,48.6,32.2c5.8-0.9,11.1-3.2,16.9-4.3c17.8-3.4,37.9,4.7,54.5-1.5
+	c6.6-2.5,11.6-6.9,15.5-11.8c12.2-15.3,13.7-35.6,3.8-51.9c-6.9-11.5-19-20.9-23.6-33.1c-4.5-11.9-1.4-24.9-4.7-37.1
+	C121.1,5,103.7-5.6,85.7,3.1c-6.8,3.3-12.6,7.7-20,10.2C58,15.9,49.5,16.6,41.6,19C26.8,23.6,16.7,31,10.3,39.9z"></path>
+                  </svg>
+                </div>
+                <img class="u-image u-image-contain u-image-1" src="images/52c70f34-3694-5b1a-028f-bb6d4f256f7d.png"
+                  data-image-width="900" data-image-height="912">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+  <section class="u-align-center u-clearfix u-section-7" id="carousel_c2fa">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <div class="u-opacity u-opacity-50 u-shape u-shape-svg u-text-palette-2-light-2 u-shape-1">
+        <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 150" style="">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-1073"></use>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
+          xml:space="preserve" class="u-svg-content" viewBox="0 0 160 150" x="0px" y="0px" id="svg-1073">
+          <path d="M43.2,126.9c14.2,1.3,27.6,7,39.1,15.6c8.3,6.1,19.4,10.3,32.7,5.3c11.7-4.4,18.6-17.4,21-30.2c2.6-13.3,8.1-25.9,15.7-37.1
+	c8.3-12.1,10.8-27.9,5.3-42.7C150.5,20.3,134.6,9,117,7.6C107.9,6.9,98.8,5,90.1,1.9C83-0.6,75-0.7,67.4,2.1
+	c-9.9,3.7-17,11.6-20.1,21c-3.3,10.1-10.9,18-20.6,22.2c-0.1,0-0.1,0.1-0.2,0.1c-20.3,8.9-31,32-24.6,53.2
+	C6.9,115.6,25.2,125.2,43.2,126.9z"></path>
+        </svg>
+      </div>
+      <img class="u-align-left u-image u-image-contain u-image-default u-image-1" data-image-width="1100"
+        data-image-height="912" src="{% static 'images/contact.jpg' %}">
+      <div class="u-opacity u-opacity-70 u-palette-2-light-2 u-shape u-shape-circle u-shape-2"></div>
+      <div class="u-expanded-width-xs u-form u-radius-10 u-white u-form-1">
+        <form action="" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" source="email" name="form"
+          style="padding: 28px;" method="POST">
+          {% csrf_token %}
+          <div class="u-form-group u-form-name">
+            <label for="name-4c18" class="u-label">Name</label>
+            <input type="text" placeholder="Enter your Name" id="name-4c18" name="name"
+              class="u-border-2 u-border-palette-2-light-3 u-input u-input-rectangle u-palette-2-light-3 u-radius-10"
+              required="">
+          </div>
+          <div class="u-form-email u-form-group">
+            <label for="email-4c18" class="u-label">Email</label>
+            <input type="email" placeholder="Enter a valid email address" id="email-4c18" name="email"
+              class="u-border-2 u-border-palette-2-light-3 u-input u-input-rectangle u-palette-2-light-3 u-radius-10"
+              required="">
+          </div>
+          <div class="u-form-group u-form-message">
+            <label for="message-4c18" class="u-label">Message</label>
+            <textarea placeholder="Enter your message" rows="4" cols="50" id="message-4c18" name="message"
+              class="u-border-2 u-border-palette-2-light-3 u-input u-input-rectangle u-palette-2-light-3 u-radius-10"
+              required=""></textarea>
+          </div>
+          <!-- <div class="u-form-agree u-form-group u-form-group-4">
+            <input type="checkbox" id="agree-a472" name="agree" class="u-agree-checkbox" required="">
+            <label for="agree-a472" class="u-agree-label u-label">I accept the <a href="#">Terms of Service</a>
+            </label>
+          </div> -->
+          <div class="u-align-right u-form-group u-form-submit">
+            <a href="#"
+              class="u-active-palette-2-light-1 u-border-2 u-border-active-palette-2-light-1 u-border-hover-palette-2-light-1 u-border-palette-2-base u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-2-light-1 u-palette-2-base u-radius-10 u-btn-1">Submit</a>
+            <input type="submit" value="submit" class="u-form-control-hidden">
+          </div>
+          <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
+          <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try
+            again. </div>
+          <input type="hidden" value="" name="recaptchaResponse">
+          <input type="hidden" name="formServices" value="3443a06ca1365cac6daca5771698d501">
+        </form>
+      </div>
+      
+    </div>
+  </section>
+  <!-- <section class="u-clearfix u-section-8" id="sec-1971">
+    <div class="u-clearfix u-sheet u-sheet-1"></div>
+  </section>
 
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
+  <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-602c">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <p class="u-small-text u-text u-text-variant u-text-1">Sample text. Click to select the Text Element.</p>
+    </div>
+  </footer>
+  <section class="u-backlink u-clearfix u-grey-80">
+    <a class="u-link" href="https://nicepage.com/website-templates" target="_blank">
+      <span>Website Templates</span>
+    </a>
+    <p class="u-text">
+      <span>created with</span>
+    </p>
+    <a class="u-link" href="" target="_blank">
+      <span>Website Builder Software</span>
+    </a>.
+  </section> -->
 
-    <!-- MDB -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.js"></script>
+  {% endblock content %}
 </body>
 
 </html>

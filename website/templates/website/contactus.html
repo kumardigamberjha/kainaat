@@ -1,47 +1,152 @@
-{% extends 'website/index.html' %}
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en">
 
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords"
+    content="​Create Your Personal Style, ​Beauty and Personal Care, ​Fashion and beauty tips, ​Top Fashion and Beauty Tips, ​How to Look Younger">
+  <meta name="description" content="">
+  <title>Kainaat Mahajan | Home</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'style/nicepage.css' %}" media="screen">
+  <link rel="stylesheet" href="{% static 'style/Home.css' %}" media="screen">
+  <script class="u-script" type="text/javascript" src="{% static 'javascript/jquery.js' %}" defer=""></script>
+  <script class="u-script" type="text/javascript" src="{% static 'javascript/nicepage.js' %}" defer=""></script>
+  <meta name="referrer" content="origin">
+  <link id="u-theme-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+  <link id="u-page-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
 
-{% block content %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-<style>
-  #contid {
-    background: url('../../../static/images/4535151.jpg');
+  <link rel="stylesheet" href="{% static 'style/index.css' %}">
 
-  }
-</style>
+  <link rel="stylesheet" href="{% static 'style/aboutus.css' %}">
 
-{% if messages %}
-<ul class="messages">
+  <meta name="theme-color" content="#478ac9">
+  <meta property="og:title" content="Home">
+  <meta property="og:type" content="website">
+</head>
+
+<body class="u-body u-xl-mode" data-lang="en">
+  <header class="u-clearfix u-header u-header" id="sec-7bf6" style="background-color: transparent; line-height: 10px;">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <a href="{% url 'homepage' %}" class="u-image u-logo u-image-1">
+        <img src="{% static 'images/T&K_final-07.png' %}" class="u-logo-image u-logo-image-1">
+      </a>
+      <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+        <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+          <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+            href="#">
+            <svg class="u-svg-link" viewBox="0 0 24 24">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+            </svg>
+            <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"
+              xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <rect y="1" width="16" height="2"></rect>
+                <rect y="7" width="16" height="2"></rect>
+                <rect y="13" width="16" height="2"></rect>
+              </g>
+            </svg>
+          </a>
+        </div>
+        <div class="u-nav-container">
+          <ul class="u-nav u-unstyled u-nav-1">
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="{% url 'homepage' %}" style="padding: 10px 20px;">Home</a>
+            </li>
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="{% url 'aboutuspage' %}" style="padding: 10px 20px;">About</a>
+            </li>
+            <li class="u-nav-item"><a
+              class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+              href="{% url 'bloghome' %}" style="padding: 10px 20px;">Blogs</a>
+          </li>
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="{% url 'contactuspage' %}" style="padding: 10px 20px;">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <div class="u-nav-container-collapse">
+          <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+            <div class="u-inner-container-layout u-sidenav-overflow">
+              <div class="u-menu-close"></div>
+              <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'homepage' %}">Home</a>
+                </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'aboutuspage' %}">About</a>
+                </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'bloghome' %}">Blogs</a>
+                </li>
+                <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'contactuspage' %}">Contact</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  {% block content %}
+
+  <style>
+    #contid {
+      background: url('../../../static/images/4535151.jpg');
+
+    }
+  </style>
+
+  {% if messages %}
+  <ul class="messages">
     {% for message in messages %}
-    <li{% if message.tags %} class="{{ message.tags }} p-2 mb-2 bg-success text-white" style="list-style: none; border-radius: 10px; width: 95%; margin: auto auto;" {% endif %}>{{ message }}</li>
-        {% endfor %}
-</ul>
-{% endif %}
+    <li{% if message.tags %} class="{{ message.tags }} p-2 mb-2 bg-success text-white"
+      style="list-style: none; border-radius: 10px; width: 95%; margin: auto auto;" {% endif %}>{{ message }}</li>
+      {% endfor %}
+  </ul>
+  {% endif %}
 
 
-<div class="px-4 text-center" id="contid"
-  style="width: 100%; height: 100vh; padding-top: 95px; background-image: url('https://images.unsplash.com/photo-1552973315-27072571ee52?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjN8fGNvbnRhY3R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'); background-size: 100% 100vh; background-repeat: no-repeat; color: white;">
-  <div class="container" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)); padding: 15px; border-radius: 15px;">
-    <h1 class="display-5 fw-bold">Contact Us</h1>
-    <div class="col-lg-6 mx-auto">
-      <div class="mb-3">
+  <div class="px-4 text-center" id="contid"
+    style="width: 100%; height: 100vh; padding-top: 95px; background-image: url('https://images.unsplash.com/photo-1552973315-27072571ee52?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NjN8fGNvbnRhY3R8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60'); background-size: 100% 100vh; background-repeat: no-repeat; color: white;">
+    <div class="container"
+      style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)); padding: 15px; border-radius: 15px;">
+      <h1 class="display-5 fw-bold">Contact Us</h1>
+      <div class="col-lg-6 mx-auto">
         <form action="" method="post">
           {% csrf_token %}
-          <label for="exampleFormControlInput1" class="form-label" style="color: white;">Email address</label>
-          <input type="email" class="form-control" name="email" id="exampleFormControlInput1"
-            placeholder="name@example.com">
-      </div>
-      <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label" style="color: white;">Enter Your Feedback
-          Here</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3"></textarea>
-      </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label" style="color: white;">Enter Your Name</label>
+              <input type="text" class="form-control" name="name" id="exampleFormControlInput1"
+              placeholder="John Doe">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label" style="color: white;">Email address</label>
+            <input type="email" class="form-control" name="email" id="exampleFormControlInput1"
+              placeholder="name@example.com">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label" style="color: white;">Enter Your Feedback
+              Here</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="message" rows="3"></textarea>
+          </div>
 
-      <input type="submit" value="Submit"
-        style="padding: 5px 25px; background: #F2683D; border: none; color: white; font-weight: 500;">
-      </form>
+          <input type="submit" value="Submit"
+            style="padding: 5px 25px; background: #F2683D; border: none; color: white; font-weight: 500;">
+        </form>
+      </div>
     </div>
   </div>
-</div>
 
-{% endblock content %}
+  {% endblock content %}
+</body>
+
+</html>
