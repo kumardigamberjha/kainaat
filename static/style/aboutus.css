@@ -1,6 +1,6 @@
 #kai_about{
   position: absolute;
-  top: 10%;
+  top: 13%;
   text-align: center;
   border: none;
   font-weight: 800;
@@ -9,7 +9,6 @@
   width: 100%;
   animation: flicker 2s infinite alternate;     
   font-family: "Poppins", sans-serif;
-  /* margin: auto auto; */
   overflow-x: hidden;
 }
 
@@ -19,12 +18,12 @@
   text-shadow:
     0 0 5px #fff,
     0 0 10px #fff,
-    0 0 20px rgb(255, 238, 0),
-    0 0 40px rgb(255, 238, 0),
-    0 0 80px rgb(255, 238, 0),
-    0 0 90px rgb(255, 238, 0),
-    0 0 100px rgb(255, 238, 0),
-    0 0 150px rgb(255, 238, 0);
+    0 0 20px #F2683D,
+    0 0 40px #F2683D,
+    0 0 80px #F2683D,
+    0 0 90px #F2683D,
+    0 0 100px #F2683D,
+    0 0 150px #F2683D;
     letter-spacing: 2px;
 }
 h2 {
@@ -38,14 +37,14 @@ h2 {
   0%, 18%, 22%, 25%, 53%, 57%, 100% {
 
       text-shadow:
-      0 0 4px rgb(255, 238, 0),
-      0 0 11px rgb(255, 238, 0),
-      0 0 19px rgb(255, 238, 0),
-      0 0 40px rgb(255, 238, 0),
-      0 0 80px rgb(255, 238, 0),
-      0 0 90px rgb(255, 238, 0),
-      0 0 100px rgb(255, 238, 0),
-      0 0 150px rgb(255, 238, 0);
+      0 0 4px #F2683D,
+      0 0 11px #F2683D,
+      0 0 19px #F2683D,
+      0 0 40px #F2683D,
+      0 0 80px #F2683D,
+      0 0 90px #F2683D,
+      0 0 100px #F2683D,
+      0 0 150px #F2683D;
   
   }
   20%, 24%, 55% {        

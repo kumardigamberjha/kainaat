@@ -3,9 +3,6 @@ from website.forms import ContactUsForm
 from django.contrib import messages
 from Blog.models import Blog
 
-def index(request):
-    
-    return render(request, 'website/welcomepage.html')
 
 def HomePage(request):
     blogs = Blog.objects.all()[:6]
@@ -21,7 +18,7 @@ def HomePage(request):
     return render(request, 'website/index.html', context)
 
 def AboutUs(request):
-    return render(request, 'website/aboutus.html')
+    return render(request, 'website/about.html')
 
 def ContactUs(request):
     form = ContactUsForm()
