@@ -60,9 +60,13 @@
                 href="{% url 'aboutuspage' %}" style="padding: 10px 20px;">About</a>
             </li>
             <li class="u-nav-item"><a
-              class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
-              href="{% url 'bloghome' %}" style="padding: 10px 20px;">Blogs</a>
-          </li>
+                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="{% url 'bloghome' %}" style="padding: 10px 20px;">Blogs</a>
+            </li>
+            <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="{% url 'all_prods' %}" style="padding: 10px 20px;">Shop</a>
+            </li>
             <li class="u-nav-item"><a
                 class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
                 href="{% url 'contactuspage' %}" style="padding: 10px 20px;">Contact</a>
@@ -271,7 +275,9 @@
         <div class="u-container-layout u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-1">
           <h2 class="u-text u-text-default u-text-1"> Our Users and Motivation<br>
           </h2>
-          <p class="u-text u-text-2">While you’re here, to make it worth your while, there is a blog written and maintained by Tanya who is an avid reader and passionate for writing. You’ll find the letters she is writing for her baby girl to grow up and read. And also, giving out her first hand motherhood experiences here. </p>
+          <p class="u-text u-text-2">While you’re here, to make it worth your while, there is a blog written and
+            maintained by Tanya who is an avid reader and passionate for writing. You’ll find the letters she is writing
+            for her baby girl to grow up and read. And also, giving out her first hand motherhood experiences here. </p>
           <a href="{% url 'bloghome' %}"
             class="u-active-palette-2-light-1 u-border-2 u-border-active-palette-2-light-1 u-border-hover-palette-2-light-1 u-border-palette-2-light-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-none u-radius-50 u-text-active-white u-text-body-color u-text-hover-white u-btn-2">learn
             more</a>
@@ -467,7 +473,7 @@
           <input type="hidden" name="formServices" value="3443a06ca1365cac6daca5771698d501">
         </form>
       </div>
-      
+
     </div>
   </section>
   <!-- <section class="u-clearfix u-section-8" id="sec-1971">

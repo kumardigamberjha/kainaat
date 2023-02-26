@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     # 'taggit',
     'ckeditor',
     'widget_tweaks',
+    'Shop',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
