@@ -16,7 +16,7 @@
           <h3 class="mb-0">{{randomBlog.title|slice:"0:20"}}</h3>
           <div class="mb-1 text-muted">{{randomBlog.pub_date}}</div>
           <p class="card-text mb-auto">{{randomBlog.content|safe|slice:"0:30"}}</p>
-          <a href="{% url 'ReadBlog' randomBlog.post_id %}" class="stretched-link">Continue reading</a>
+          <a href="{% url 'ReadBlog' randomBlog.title %}" class="stretched-link">Continue reading</a>
         </div>
         <div class="col-auto col-md-6 d-none d-lg-block">
           <img src="{{randomBlog.img.url}}" alt="{{randomBlog.title}}" style="width: 200px; height: 200px;">
@@ -30,7 +30,7 @@
           <div class="mb-1 text-muted">{{randomBlog2.pub_date}}</div>
           <p class="mb-auto">{{randomBlog2.content|safe|slice:"0:30"}}
           </p>
-          <a href="{% url 'ReadBlog' randomBlog2.post_id %}" class="stretched-link">Continue reading</a>
+          <a href="{% url 'ReadBlog' randomBlog2.title %}" class="stretched-link">Continue reading</a>
         </div>
         <div class="col-auto col-md-6 d-none d-lg-block">
           <img src="{{randomBlog2.img.url}}" alt="{{randomBlog.title}}" style="width: 200px; height: 200px;">
@@ -48,15 +48,15 @@
       <div class="u-blog-post u-container-style u-repeater-item u-white u-repeater-item-1">
         <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><!--blog_post_header-->
           <h4 class="u-blog-control u-text u-text-1">
-            <a class="u-post-header-link" href="{% url 'ReadBlog' i.post_id %}">{{i.title|slice:"0:20"}}</a>
+            <a class="u-post-header-link" href="{% url 'ReadBlog' i.title %}">{{i.title|slice:"0:20"}}</a>
           </h4><!--/blog_post_header--><!--blog_post_image-->
-          <a class="u-post-header-link" href="{% url 'ReadBlog' i.post_id %}"><img alt=""
+          <a class="u-post-header-link" href="{% url 'ReadBlog' i.title %}"><img alt=""
               class="u-blog-control u-expanded-width u-image u-image-default u-image-1"
               src="{{i.img.url}}"></a><!--/blog_post_image--><!--blog_post_content-->
           <div class="u-blog-control u-post-content u-text u-text-2 fr-view">Sample small text. Lorem ipsum dolor sit
             amet.
           </div><!--/blog_post_content--><!--blog_post_readmore-->
-          <a href="{% url 'ReadBlog' i.post_id %}"
+          <a href="{% url 'ReadBlog' i.title %}"
             class="u-blog-control u-border-2 u-border-palette-1-base u-btn u-btn-rectangle u-button-style u-none u-btn-1"><!--blog_post_readmore_content--><!--options_json--><!--{"content":"","defaultValue":"Read More"}--><!--/options_json-->Read
             More<!--/blog_post_readmore_content--></a><!--/blog_post_readmore-->
         </div>

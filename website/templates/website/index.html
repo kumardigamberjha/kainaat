@@ -7,10 +7,13 @@
   <meta name="keywords"
     content="​Create Your Personal Style, ​Beauty and Personal Care, ​Fashion and beauty tips, ​Top Fashion and Beauty Tips, ​How to Look Younger">
   <meta name="description" content="">
+
   <title>Kainaat Mahajan | Home</title>
   {% load static %}
   <link rel="stylesheet" href="{% static 'style/nicepage.css' %}" media="screen">
   <link rel="stylesheet" href="{% static 'style/Home.css' %}" media="screen">
+  <link rel="stylesheet" href="{% static 'style/Blog-Template.css' %}" media="screen">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
   <script class="u-script" type="text/javascript" src="{% static 'javascript/jquery.js' %}" defer=""></script>
   <script class="u-script" type="text/javascript" src="{% static 'javascript/nicepage.js' %}" defer=""></script>
   <meta name="generator" content="Nicepage 5.3.6, nicepage.com">
@@ -19,7 +22,6 @@
     href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
   <link id="u-page-google-font" rel="stylesheet"
     href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
-
 
   <meta name="theme-color" content="#478ac9">
   <meta property="og:title" content="Home">
@@ -202,7 +204,8 @@
                             src="{% static 'images/bgrmv1.png' %}" alt=""></span>
                         <h6 class="u-custom-font u-font-montserrat u-text u-text-default-lg u-text-default-xl u-text-4">
                           Our Blogs</h6>
-                        <p class="u-text u-text-grey-40 u-text-5">Are you an avid reader looking for valuable insights and tips? Give our blog a chance and explore our latest posts. </p>
+                        <p class="u-text u-text-grey-40 u-text-5">Are you an avid reader looking for valuable insights
+                          and tips? Give our blog a chance and explore our latest posts. </p>
                       </div>
                     </div>
                     <div
@@ -212,7 +215,9 @@
                             src="{% static 'images/123.png' %}" alt=""></span>
                         <h6 class="u-custom-font u-font-montserrat u-text u-text-default-lg u-text-default-xl u-text-6">
                           Reels</h6>
-                        <p class="u-text u-text-grey-40 u-text-7">Stay up-to-date with our latest content by checking out our daily reels! We're constantly updating with fresh and exciting content that we're sure you'll love.</p>
+                        <p class="u-text u-text-grey-40 u-text-7">Stay up-to-date with our latest content by checking
+                          out our daily reels! We're constantly updating with fresh and exciting content that we're sure
+                          you'll love.</p>
                       </div>
                     </div>
                     <div
@@ -222,7 +227,9 @@
                             src="{% static 'images/shopbg.png' %}" alt=""></span>
                         <h6 class="u-custom-font u-font-montserrat u-text u-text-default-lg u-text-default-xl u-text-8">
                           Shop With Us</h6>
-                        <p class="u-text u-text-grey-40 u-text-9">Our shop section is coming soon! We're working hard behind the scenes to bring you the best products and services. Stay tuned for updates, and get ready to shop with us in the near future!</p>
+                        <p class="u-text u-text-grey-40 u-text-9">Our shop section is coming soon! We're working hard
+                          behind the scenes to bring you the best products and services. Stay tuned for updates, and get
+                          ready to shop with us in the near future!</p>
                       </div>
                     </div>
                   </div>
@@ -234,67 +241,29 @@
       </div>
     </div>
   </section>
-  <section class="u-clearfix u-section-3" id="carousel_1ef1">
+  <h2 class="u-custom-font u-font-montserrat u-text u-text-palette-2-base u-text-2" style="text-align: center; font-weight: 800;">Our Blogs</h2>
+  <section class="u-clearfix u-section-1" id="sec-92f8">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-      <div class="u-opacity u-opacity-50 u-shape u-shape-svg u-text-palette-2-light-2 u-shape-1">
-        <svg class="u-svg-link" preserveAspectRatio="none" viewBox="0 0 160 150" style="">
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-9092"></use>
-        </svg>
-        <svg class="u-svg-content" viewBox="0 0 160 150" x="0px" y="0px" id="svg-9092">
-          <path d="M121.1,18C110.7,1.5,89.8-4.6,72.6,3.7c-10.5,5-17.7,14.2-20.8,24.7C48.4,39.9,42.4,48,28.3,55.5
-	c-50.6,26.9-27.3,99.4,22,84.7c14.3-4.2,29.7-1.4,43.2,5.1c13.3,6.5,29.3,6.4,43.2-1.8c21-12.5,29.3-40.1,18.8-62.7
-	c-2.5-5.4-5.9-10.1-9.8-14c-9.4-9.3-16.4-21-18.8-34.2C125.9,27.6,124,22.6,121.1,18z"></path>
-        </svg>
+      <div class="u-blog u-expanded-width u-repeater u-repeater-1"><!--blog_post-->
+        {% for i in blogs %}
+        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><!--blog_post_header-->
+          <h4 class="u-blog-control u-text u-text-1">
+            <a class="u-post-header-link" href="{% url 'ReadBlog' i.title %}">{{i.title|slice:"0:20"}}</a>
+          </h4><!--/blog_post_header--><!--blog_post_image-->
+          <a class="u-post-header-link" href="{% url 'ReadBlog' i.title %}"><img alt=""
+              class="u-blog-control u-expanded-width u-image u-image-default u-image-1"
+              src="{{i.img.url}}"></a><!--/blog_post_image--><!--blog_post_content-->
+          <div class="u-blog-control u-post-content u-text u-text-2 fr-view">{{i.content|safe|slice:"0:70"}}
+          </div><!--/blog_post_content--><!--blog_post_readmore-->
+          <a href="{% url 'ReadBlog' i.title %}"
+            class="u-blog-control u-border-2 u-border-palette-1-base u-btn u-btn-rectangle u-button-style u-none u-btn-1"><!--blog_post_readmore_content--><!--options_json--><!--{"content":"","defaultValue":"Read More"}--><!--/options_json-->Read
+            More<!--/blog_post_readmore_content--></a><!--/blog_post_readmore-->
+        </div>
+        {% endfor %}
       </div>
-      <img class="u-expanded-width-md u-expanded-width-xs u-image u-image-contain u-image-default u-image-1"
-        src="{% static 'images/123.png' %}" alt="" data-image-width="1000" data-image-height="896">
-      <div
-        class="u-align-left-md u-align-left-sm u-align-left-xs u-align-right-lg u-align-right-xl u-container-style u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
-        <div class="u-container-layout u-valign-top u-container-layout-1">
-          <h2 class="u-custom-font u-font-montserrat u-text u-text-1"> About TanynKai </h2>
-          <h5 class="u-text u-text-2">We have decided to dedicate this space to Kai and keep it as a record for her to
-            see one day. It would most likely be the greatest wealth, the greatest asset to leave your baby girl-a
-            written account of her journey in this world.</h5>
+    </div>
+  </section>
 
-        </div>
-      </div>
-      <div class="u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-list u-list-1">
-        <div class="u-repeater u-repeater-1">
-          <div class="u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-container-layout-2">
-              <p class="u-text u-text-default u-text-grey-60 u-text-4"> Many people ask-Why “SpaceBaby”? Well, Kainaat
-                means The Universe so what other than the Space to relate to the most? Kainaat is a peppy little animal
-                lover who loves to spread cheer and smiles wherever she goes. &nbsp;</p>
-            </div>
-          </div>
-          <div class="u-container-style u-list-item u-repeater-item">
-            <div class="u-container-layout u-similar-container u-container-layout-3">
-              <p class="u-text u-text-default u-text-grey-60 u-text-5"> While you’re here, to make it worth your while,
-                there is a blog written and maintained by Tanya who is an avid reader and passionate for writing. You’ll
-                find the letters she is writing for her baby girl to grow up and read. </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="u-clearfix u-white " id="carousel_270e">
-    <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-xl u-valign-middle-xs u-sheet-1">
-      <div
-        class="u-align-center-md u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-xl u-container-style u-expanded-width u-group u-shape-rectangle u-group-1">
-        <div class="u-container-layout u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-container-layout-1">
-          <h2 class="u-text u-text-default u-text-1"> Our Users and Motivation<br>
-          </h2>
-          <p class="u-text u-text-2">While you’re here, to make it worth your while, there is a blog written and
-            maintained by Tanya who is an avid reader and passionate for writing. You’ll find the letters she is writing
-            for her baby girl to grow up and read. And also, giving out her first hand motherhood experiences here. </p>
-          <a href="{% url 'bloghome' %}"
-            class="u-active-palette-2-light-1 u-border-2 u-border-active-palette-2-light-1 u-border-hover-palette-2-light-1 u-border-palette-2-light-1 u-btn u-btn-round u-button-style u-hover-palette-2-light-1 u-none u-radius-50 u-text-active-white u-text-body-color u-text-hover-white u-btn-2">learn
-            more</a>
-        </div>
-      </div>
-    </div>
-  </section>
   <section class="u-align-center u-clearfix u-section-7" id="carousel_c2fa">
     <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
       <div class="u-opacity u-opacity-50 u-shape u-shape-svg u-text-palette-2-light-2 u-shape-1">
@@ -313,7 +282,7 @@
         data-image-height="912" src="{% static 'images/contact.jpg' %}">
       <div class="u-opacity u-opacity-70 u-palette-2-light-2 u-shape u-shape-circle u-shape-2"></div>
       <div class="u-expanded-width-xs u-form u-radius-10 u-white u-form-1">
-        <form action="" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" source="email" name="form"
+        <form action="" class="u-clearfix u-form-spacing-15 u-form-vertical u-inner-form" name="form"
           style="padding: 28px;" method="POST">
           {% csrf_token %}
           <div class="u-form-group u-form-name">
@@ -380,4 +349,8 @@
       <p class="u-small-text u-text u-text-variant u-text-1">Made by TanynKai with Love.</p>
     </div>
   </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
   {% endblock content %}

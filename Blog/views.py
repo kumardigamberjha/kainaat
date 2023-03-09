@@ -60,8 +60,8 @@ def UpdateBlog(request, post_id):
 
 
 
-def ReadBlog(request, post_id):
-    data = Blog.objects.get(post_id=post_id)
+def ReadBlog(request, title):
+    data = Blog.objects.get(title=title)
     form = CommentForm()
     
     if request.method == "POST":
