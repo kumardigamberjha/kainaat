@@ -1,79 +1,173 @@
-{% extends 'website/index.html' %}
+<!DOCTYPE html>
+<html style="font-size: 16px;" lang="en">
 
-{% block content %}
-{% load static %}
-<link rel="stylesheet" href="{% static 'style/Blog-Template.css' %}" media="screen">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>Blogs Kainaat Mahajan</title>
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'style/nicepage.css' %}" media="screen">
+  <link rel="stylesheet" href="{% static 'style/Blog-Template.css' %}" media="screen">
+  <script class="u-script" type="text/javascript" src="{% static 'javascript/jquery.js' %}" defer=""></script>
+  <script class="u-script" type="text/javascript" src="{% static 'javascript/nicepage.js' %}" defer=""></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <meta name="generator" content="Nicepage 5.3.6, nicepage.com">
+  <link id="u-theme-google-font" rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
 
 
-<main class="container">
+  <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"logo": "images/default-logo.png"
+}</script>
+  <meta name="theme-color" content="#478ac9">
+</head>
 
-  <div class="row mb-2" style="margin-top: 95px;">
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col col-md-6 p-4 d-flex flex-column position-static">
-          <!-- <strong class="d-inline-block mb-2 text-primary">World</strong> -->
-          <h3 class="mb-0">{{randomBlog.title|slice:"0:20"}}</h3>
-          <div class="mb-1 text-muted">{{randomBlog.pub_date}}</div>
-          <p class="card-text mb-auto">{{randomBlog.content|safe|slice:"0:30"}}</p>
-          <a href="{% url 'ReadBlog' randomBlog.title %}" class="stretched-link">Continue reading</a>
+<body>
+  <main class="container">
+
+    <header class="u-clearfix u-header u-header" id="sec-7bf6">
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <a href="{% url 'homepage' %}" class="u-image u-logo u-image-1">
+          <img src="{% static 'images/T&K_final-07.png' %}" class="u-logo-image u-logo-image-1">
+        </a>
+        <nav class="u-menu u-menu-dropdown u-offcanvas u-menu-1">
+          <div class="menu-collapse" style="font-size: 1rem; letter-spacing: 0px;">
+            <a class="u-button-style u-custom-left-right-menu-spacing u-custom-padding-bottom u-custom-top-bottom-menu-spacing u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+              href="#">
+              <svg class="u-svg-link" viewBox="0 0 24 24">
+                <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#menu-hamburger"></use>
+              </svg>
+              <svg class="u-svg-content" version="1.1" id="menu-hamburger" viewBox="0 0 16 16" x="0px" y="0px"
+                xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg">
+                <g>
+                  <rect y="1" width="16" height="2"></rect>
+                  <rect y="7" width="16" height="2"></rect>
+                  <rect y="13" width="16" height="2"></rect>
+                </g>
+              </svg>
+            </a>
+          </div>
+          <div class="u-nav-container">
+            <ul class="u-nav u-unstyled u-nav-1">
+              <li class="u-nav-item"><a
+                  class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                  href="{% url 'homepage' %}" style="padding: 10px 20px;">Home</a>
+              </li>
+              <li class="u-nav-item"><a
+                  class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                  href="{% url 'aboutuspage' %}" style="padding: 10px 20px; color: black!important">About</a>
+              </li>
+              <li class="u-nav-item"><a
+                  class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                  href="{% url 'bloghome' %}" style="padding: 10px 20px; color: black!important;">Blogs</a>
+              </li>
+              <!-- <li class="u-nav-item"><a
+                class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                href="{% url 'all_prods' %}" style="padding: 10px 20px;">Shop</a>
+            </li> -->
+              <li class="u-nav-item"><a
+                  class="u-button-style u-nav-link u-text-active-palette-1-base u-text-hover-palette-2-base"
+                  href="{% url 'contactuspage' %}" style="padding: 10px 20px;">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="u-nav-container-collapse">
+            <div class="u-black u-container-style u-inner-container-layout u-opacity u-opacity-95 u-sidenav">
+              <div class="u-inner-container-layout u-sidenav-overflow">
+                <div class="u-menu-close"></div>
+                <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'homepage' %}">Home</a>
+                  </li>
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'aboutuspage' %}">About</a>
+                  </li>
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link" href="{% url 'bloghome' %}">Blogs</a>
+                  </li>
+                  <li class="u-nav-item"><a class="u-button-style u-nav-link"
+                      href="{% url 'contactuspage' %}">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <div class="row mb-2" style="margin-top: 95px;">
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col col-md-6 p-4 d-flex flex-column position-static">
+            <!-- <strong class="d-inline-block mb-2 text-primary">World</strong> -->
+            <h3 class="mb-0">{{randomBlog.title|slice:"0:20"}}</h3>
+            <div class="mb-1 text-muted">{{randomBlog.pub_date}}</div>
+            <p class="card-text mb-auto">{{randomBlog.content|safe|slice:"0:30"}}</p>
+            <a href="{% url 'ReadBlog' randomBlog.title %}" class="stretched-link">Continue reading</a>
+          </div>
+          <div class="col-auto col-md-6 d-none d-lg-block">
+            <img src="{{randomBlog.img.url}}" alt="{{randomBlog.title}}" style="width: 200px; height: 200px;">
+          </div>
         </div>
-        <div class="col-auto col-md-6 d-none d-lg-block">
-          <img src="{{randomBlog.img.url}}" alt="{{randomBlog.title}}" style="width: 200px; height: 200px;">
+      </div>
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <div class="col col-md-6 p-4 d-flex flex-column position-static">
+            <h3 class="mb-0">{{randomBlog2.title|slice:"0:20"}}</h3>
+            <div class="mb-1 text-muted">{{randomBlog2.pub_date}}</div>
+            <p class="mb-auto">{{randomBlog2.content|safe|slice:"0:30"}}
+            </p>
+            <a href="{% url 'ReadBlog' randomBlog2.title %}" class="stretched-link">Continue reading</a>
+          </div>
+          <div class="col-auto col-md-6 d-none d-lg-block">
+            <img src="{{randomBlog2.img.url}}" alt="{{randomBlog.title}}" style="width: 200px; height: 200px;">
+
+          </div>
         </div>
       </div>
     </div>
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col col-md-6 p-4 d-flex flex-column position-static">
-          <h3 class="mb-0">{{randomBlog2.title|slice:"0:20"}}</h3>
-          <div class="mb-1 text-muted">{{randomBlog2.pub_date}}</div>
-          <p class="mb-auto">{{randomBlog2.content|safe|slice:"0:30"}}
-          </p>
-          <a href="{% url 'ReadBlog' randomBlog2.title %}" class="stretched-link">Continue reading</a>
+  </main>
+  <section class="u-clearfix u-section-1" id="sec-92f8">
+    <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+      <!--blog--><!--blog_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/blog_options_json-->
+      <div class="u-blog u-expanded-width u-repeater u-repeater-1"><!--blog_post-->
+        {% for i in Blog %}
+        <div class="u-blog-post u-container-style u-repeater-item u-white u-repeater-item-1">
+          <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><!--blog_post_header-->
+            <h4 class="u-blog-control u-text u-text-1">
+              <a class="u-post-header-link" href="{% url 'ReadBlog' i.title %}">{{i.title|slice:"0:20"}}</a>
+            </h4><!--/blog_post_header--><!--blog_post_image-->
+            <a class="u-post-header-link" href="{% url 'ReadBlog' i.title %}"><img alt=""
+                class="u-blog-control u-expanded-width u-image u-image-default u-image-1"
+                src="{{i.img.url}}"></a><!--/blog_post_image--><!--blog_post_content-->
+            <div class="u-blog-control u-post-content u-text u-text-2 fr-view">Sample small text. Lorem ipsum dolor sit
+              amet.
+            </div><!--/blog_post_content--><!--blog_post_readmore-->
+            <a href="{% url 'ReadBlog' i.title %}"
+              class="u-blog-control u-border-2 u-border-palette-1-base u-btn u-btn-rectangle u-button-style u-none u-btn-1"><!--blog_post_readmore_content--><!--options_json--><!--{"content":"","defaultValue":"Read More"}--><!--/options_json-->Read
+              More<!--/blog_post_readmore_content--></a><!--/blog_post_readmore-->
+          </div>
         </div>
-        <div class="col-auto col-md-6 d-none d-lg-block">
-          <img src="{{randomBlog2.img.url}}" alt="{{randomBlog.title}}" style="width: 200px; height: 200px;">
+        {% endfor %}
 
-        </div>
-      </div>
+      </div><!--/blog-->
     </div>
-  </div>
-</main>
-<section class="u-clearfix u-section-1" id="sec-92f8">
-  <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-    <!--blog--><!--blog_options_json--><!--{"type":"Recent","source":"","tags":"","count":""}--><!--/blog_options_json-->
-    <div class="u-blog u-expanded-width u-repeater u-repeater-1"><!--blog_post-->
-      {% for i in Blog %}
-      <div class="u-blog-post u-container-style u-repeater-item u-white u-repeater-item-1">
-        <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1"><!--blog_post_header-->
-          <h4 class="u-blog-control u-text u-text-1">
-            <a class="u-post-header-link" href="{% url 'ReadBlog' i.title %}">{{i.title|slice:"0:20"}}</a>
-          </h4><!--/blog_post_header--><!--blog_post_image-->
-          <a class="u-post-header-link" href="{% url 'ReadBlog' i.title %}"><img alt=""
-              class="u-blog-control u-expanded-width u-image u-image-default u-image-1"
-              src="{{i.img.url}}"></a><!--/blog_post_image--><!--blog_post_content-->
-          <div class="u-blog-control u-post-content u-text u-text-2 fr-view">Sample small text. Lorem ipsum dolor sit
-            amet.
-          </div><!--/blog_post_content--><!--blog_post_readmore-->
-          <a href="{% url 'ReadBlog' i.title %}"
-            class="u-blog-control u-border-2 u-border-palette-1-base u-btn u-btn-rectangle u-button-style u-none u-btn-1"><!--blog_post_readmore_content--><!--options_json--><!--{"content":"","defaultValue":"Read More"}--><!--/options_json-->Read
-            More<!--/blog_post_readmore_content--></a><!--/blog_post_readmore-->
-        </div>
-      </div>
-      {% endfor %}
+  </section>
 
-    </div><!--/blog-->
-  </div>
-</section>
-
-<footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-602c">
-  <div class="u-clearfix u-sheet u-sheet-1">
-    <p class="u-small-text u-text u-text-variant u-text-1">Made by TanynKai with Love.</p>
-  </div>
-</footer>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-602c">
+    <div class="u-clearfix u-sheet u-sheet-1">
+      <p class="u-small-text u-text u-text-variant u-text-1">Made by TanynKai with Love.</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 
+</body>
 
-{% endblock content %}
+</html>
